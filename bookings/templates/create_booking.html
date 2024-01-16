@@ -5,6 +5,8 @@
 
 <main>
   {% block content %}
+  <!--This is checking if hostel exit-->
+  {% if hostel %}
   <div
     class="max-w-[90rem] mx-auto py-24 flex md:flex-row flex-col gap-16 px-4"
   >
@@ -87,5 +89,7 @@
       </form>
     </section>
   </div>
-  {% endblock %}
+  {% else %}
+  <h3 class="text-center py-64 text-2xl font-semibold">No Data Available</h3>
+  {% endif %} {% endblock %}
 </main>

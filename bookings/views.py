@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import BookingForm
+from hostel.models import Hostel
 
 def create_booking(request):
     if request.method == 'POST':
@@ -11,6 +12,7 @@ def create_booking(request):
 
     else:
         form = BookingForm()
+        hostel = Hostel.objects.first()
 
-    return render(request, 'create_booking.html', {'form': form})
+    return render(request, 'create_booking.html', {'form': form, 'hostel': hostel})
 

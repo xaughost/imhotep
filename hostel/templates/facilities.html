@@ -5,6 +5,9 @@
 
 <main>
   {% block content %}
+
+  <!--This is checking for error-->
+  {% if hostel and amenities %}
   <header class="relative h-[50vh]">
     <div class="absolute inset-0 -z-10">
       <img
@@ -50,5 +53,7 @@
       {% endfor %}
     </div>
   </section>
-  {% endblock %}
+  {% else %}
+  <h3 class="text-center py-64 text-2xl font-semibold">No Data Available</h3>
+  {% endif %} {% endblock %}
 </main>
