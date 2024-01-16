@@ -1,0 +1,58 @@
+{% extends "shared/base.html" %}
+
+<!--This is the title-->
+{% block title %}FrontLine Inn | About Us{% endblock %}
+
+<main>
+  {% block content %}
+  <section class="max-w-[80rem] mx-auto mt-16">
+    <h3
+      class="font-medium md:text-2xl text-xl text-blue-500 md:mb-8 mb-4 md:px-0 px-4"
+    >
+      About Us
+    </h3>
+    <div class="flex md:gap-16 gap-8 md:flex-row flex-col">
+      <p class="text-sm md:text-base md:p-0 px-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam libero
+        illum est fugiat ratione laudantium nam dolorum eaque amet, at debitis.
+        Harum tenetur laudantium eveniet! Voluptas cumque omnis quis, facilis
+        expedita totam nemo labore voluptate est laudantium reiciendis,
+        consectetur quaerat sequi! Nulla necessitatibus cum recusandae quia! Quo
+        a necessitatibus accusantium. Adipisci dolorum, quasi veniam error
+        itaque, voluptate excepturi ipsa repellendus natus alias a tempore ab
+        nostrum pariatur voluptas explicabo facilis numquam reiciendis obcaecati
+        reprehenderit, impedit accusamus quam aliquid? Molestias qui temporibus
+        libero distinctio eligendi repellendus. Ipsa dolore officia minima
+        eligendi qui iste adipisci corporis, pariatur perferendis obcaecati,
+        quae temporibus similique?
+      </p>
+
+      <img
+        src="{{images.first.image.url}}"
+        alt="{{hostel.name}}"
+        class="md:h-[400px] h-[200px] object-cover object-center w-[400px]"
+      />
+    </div>
+  </section>
+
+  <section id="contact" class="max-w-[80rem] mx-auto my-16 md:p-0 px-4">
+    <h3 class="font-medium md:text-2xl text-xl text-blue-500 mb-8">
+      Contact Us
+    </h3>
+    <div class="md:px-8 px-4 space-y-4">
+      <p class="flex items-center gap-4">
+        <i class="fa-solid fa-phone md:text-2xl"></i
+        ><span class="md:text-xl text-sm font-medium">{{hostel.phone}}</span>
+      </p>
+      <p class="flex items-center gap-4">
+        <i class="fa-solid fa-envelope md:text-2xl"></i
+        ><span class="md:text-xl text-sm font-medium">{{hostel.email}}</span>
+      </p>
+      <p class="flex items-center gap-4">
+        <i class="fa-solid fa-location-dot md:text-2xl"></i
+        ><span class="md:text-xl text-sm font-medium">{{hostel.location}}</span>
+      </p>
+    </div>
+  </section>
+  {% endblock %}
+</main>

@@ -1,0 +1,227 @@
+{% extends "shared/base.html" %}
+
+<main>
+  {% block content %}
+  <header class="relative h-[80vh]">
+    <div class="absolute inset-0 -z-10">
+      <img
+        src="{{ images.first.image.url }}"
+        alt="{{ hostel.name }}"
+        class="w-full h-full object-cover object-center"
+      />
+    </div>
+    <div class="z-30 max-w-[80rem] mx-auto h-full flex items-center">
+      <div class="w-full">
+        <div class="bg-black/50 md:w-3/5 px-4 py-8 space-y-4 text-white">
+          <h1 class="md:text-3xl text-lg font-bold underline">
+            {{hostel.name}}
+          </h1>
+          <p class="text-sm md:text-base">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+            veritatis dolorem reprehenderit iusto culpa ipsa iste! Laboriosam
+            fugit nobis quod.
+          </p>
+        </div>
+        <div class="flex justify-center items-center w-full md:pt-32 pt-8">
+          <div
+            class="bg-white py-4 px-8 flex md:flex-row flex-col gap-4 md:gap-12"
+          >
+            <div
+              class="flex flex-col md:items-center md:justify-between md:gap-4 gap-2"
+            >
+              <div class="flex items-center md:gap-4 gap-2">
+                <i class="fa-solid fa-location-dot md:text-2xl"></i>
+                <p class="font-medium md:text-xl text-sm">Location</p>
+              </div>
+              <p class="text-sm">{{hostel.location}}</p>
+            </div>
+            <div
+              class="flex flex-col md:items-center md:justify-between md:gap-4 gap-2"
+            >
+              <div class="flex items-center md:gap-4 gap-2">
+                <i class="fa-solid fa-bed md:text-2xl"></i>
+                <p class="font-medium md:text-xl text-sm">Number of rooms</p>
+              </div>
+              <p class="text-sm">250</p>
+            </div>
+            <div
+              class="flex flex-col md:items-center md:justify-between md:gap-4 gap-2"
+            >
+              <div class="flex items-center md:gap-4 gap-2">
+                <i class="fa-solid fa-building md:text-2xl"></i>
+                <p class="font-medium md:text-xl text-sm">Availability</p>
+              </div>
+              <p class="text-sm">
+                {% if hostel.isAvailable %}Available{% else %}Full{% endif %}
+              </p>
+            </div>
+            <div
+              class="flex flex-col md:items-center md:justify-between md:gap-4 gap-2"
+            >
+              <div class="flex items-center md:gap-4 gap-2">
+                <i class="fa-solid fa-money-bill md:text-2xl"></i>
+                <p class="font-medium md:text-xl text-sm">Cost</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="text-sm">
+                  <i class="fa-solid fa-cedi-sign"></i>
+                  <span>{{hostel.minPrice}}</span>
+                </p>
+                <p>-</p>
+                <p class="text-sm">
+                  <i class="fa-solid fa-cedi-sign"></i>
+                  <span>{{hostel.maxPrice}}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section
+    class="max-w-[80rem] mx-auto flex md:flex-row flex-col-reverse md:pt-32 pt-24 gap-4"
+  >
+    <div class="md:p-4 flex flex-1 items-center">
+      <img
+        src="{{ images.1.image.url }}"
+        alt="{{ hostel.name
+      }}"
+        class="w-[40%] md:w-[200px] h-[350px] object-cover object-center"
+      />
+      <img
+        src="{{ images.first.image.url }}"
+        alt="{{ hostel.name }}"
+        class="md:w-[300px] w-[60%] h-[400px] object-cover object-center"
+      />
+    </div>
+    <div class="p-4 flex-1">
+      <h3 class="font-medium text-blue-500 mb-8">About Us</h3>
+      <div>
+        <h2 class="md:text-2xl text-xl font-semibold mb-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </h2>
+        <p class="mb-16 md:text-base text-sm">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+          architecto officia ea earum vero laboriosam repudiandae debitis
+          doloribus. Consequuntur quibusdam officia ullam ducimus quasi saepe
+          facere suscipit eveniet impedit deserunt minima magni fuga quisquam
+          aliquid est beatae necessitatibus, asperiores rerum? Nobis aliquam
+          quas dolorem porro quod fugiat. Quas, saepe sit.
+        </p>
+      </div>
+      <a
+        href="/about"
+        class="p-4 font-medium text-white bg-blue-500 hover:bg-blue-400 md:text-base text-sm"
+        >More About Us</a
+      >
+    </div>
+  </section>
+
+  <section
+    class="max-w-[80rem] mx-auto flex md:flex-row flex-col md:pt-32 pt-24 md:gap-16 gap-8"
+  >
+    <div class="p-4 flex-1">
+      <h3 class="font-medium text-blue-500 mb-8">Available Rooms</h3>
+      <div>
+        <h2 class="md:text-2xl text-xl font-semibold mb-4">
+          Check your the rooms available
+        </h2>
+        <p class="mb-16 md:text-base text-sm">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+          architecto officia ea earum vero laboriosam repudiandae debitis
+          doloribus. Consequuntur quibusdam officia ullam ducimus quasi saepe
+          facere suscipit eveniet impedit deserunt minima magni fuga quisquam
+          aliquid est beatae necessitatibus, asperiores rerum? Nobis aliquam
+          quas dolorem porro quod fugiat. Quas, saepe sit.
+        </p>
+      </div>
+      <a
+        href="/rooms"
+        class="p-4 font-medium text-white bg-blue-500 hover:bg-blue-400 md:text-base text-sm"
+        >More Rooms</a
+      >
+    </div>
+    <div class="flex flex-1 gap-8">
+      <div class="flex flex-1 items-center flex-col gap-8">
+        {% for room in rooms|slice:":2" %}
+        <div class="relative h-[300px] w-[300px] flex items-end justify-center">
+          <div class="absolute inset-0 -z-10">
+            <img
+              src="{{ room.roomimage_set.first.image.url }}"
+              alt="{{ room.name }}"
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+          <div class="p-4">
+            <div class="bg-white py-2 px-4 flex gap-4 items-center">
+              <p class="text-sm font-semibold truncate">{{ room.name }}</p>
+              <div class="border-l pl-4">
+                <p class="text-blue-500 font-semibold">
+                  <i class="fa-solid fa-cedi-sign"></i
+                  ><span>{{room.price}}</span>
+                </p>
+                <p class="text-xs font-medium text-gray-300">
+                  per Academic Year
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="flex-1 items-center flex-col gap-8 hidden md:flex">
+        {% for room in rooms|slice:"2:4" %}
+        <div class="relative h-[300px] w-[300px] flex items-end justify-center">
+          <div class="absolute inset-0 -z-10">
+            <img
+              src="{{ room.roomimage_set.first.image.url }}"
+              alt="{{ room.name }}"
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+          <div class="p-4">
+            <div class="bg-white py-2 px-4 flex gap-4 items-center">
+              <p class="text-sm truncate font-semibold">{{ room.name }}</p>
+              <div class="border-l pl-4">
+                <p class="text-blue-500 font-semibold">
+                  <i class="fa-solid fa-cedi-sign"></i
+                  ><span>{{room.price}}</span>
+                </p>
+                <p class="text-xs font-medium text-gray-300">
+                  per Academic Year
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-[80rem] mx-auto flex py-24 md:py32 gap-16">
+    <div class="flex flex-col gap-4 w-full">
+      <h3 class="text-center font-medium text-blue-500 mb-8">Facilities</h3>
+      <div class="w-full h-[450px] relative flex justify-center items-center">
+        <div class="absolute inset-0 -z-10">
+          <img
+            src="{{ amenity.amenityimage_set.first.image.url }}"
+            alt="{{ amenity.name }}"
+            class="w-full h-full object-cover object-center"
+          />
+        </div>
+        <div class="bg-black/50 p-8">
+          <h3 class="font-semibold text-2xl text-white">{{amenity.name}}</h3>
+        </div>
+      </div>
+      <a
+        href="/facilities"
+        class="text-blue-500 underline text-end p-4 md:text-base text-sm"
+        >View More</a
+      >
+    </div>
+  </section>
+  {% endblock %}
+</main>

@@ -1,0 +1,91 @@
+{% extends "shared/base.html" %}
+
+<!--This is the title-->
+{% block title %}Imhotep | Booking{% endblock %}
+
+<main>
+  {% block content %}
+  <div
+    class="max-w-[90rem] mx-auto py-24 flex md:flex-row flex-col gap-16 px-4"
+  >
+    <section class="flex-1 space-y-8">
+      <div class="space-y-2">
+        <h2 class="text-center font-semibold text-2xl">
+          REGISTRATION GUIDELINES
+        </h2>
+        <p class="text-gray-400 text-center text-sm">
+          100% of your current hostel fees is to be paid to secure your room
+          before the deadline. Any payment made after deadline might not be
+          acknowledged
+        </p>
+      </div>
+      <div class="space-y-4">
+        <h3 class="text-xl md:text-2xl font-semibold">STEP 1: PAYMENT</h3>
+        <div class="font-medium space-y-2 text-sm md:text-base">
+          <p>ACCOUNT NAME: IMHOTEP HOSTEL INVESTMENT LTD</p>
+          <p>ACCOUNT NUMBER : 1302006080820</p>
+          <p>BRANCH :FIDELITY BANK KUMASI POST STADIUM</p>
+          <p>
+            OR Dial on any network *713*073# (IMHOTEP HOSTEL).Transactions do
+            not attract e-levy charges
+          </p>
+          <p>Enter amount to pay <br />Enter Reference (Your full name)</p>
+          <p>
+            A bill Prompt will be sent to you to approve. Sms from Frontline
+            will sent to you confirming payment with full receipt details .
+          </p>
+          <div>
+            <p>For other means of payment kindly call 0242577072</p>
+            <p class="font-semibold">
+              Your payment will only be processed in due time only if the full
+              amount of your desired room fees is paid in full .
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <h3 class="text-xl md:text-2xl font-semibold">
+          STEP 2: REGISTRATION & UPLOADING OF RECEIPT
+        </h3>
+        <div class="font-medium space-y-2">
+          <p class="text-sm md:text-base">
+            Fill the registration form on the website & upload picture of your
+            bank pay-in slip/Screenshot of transaction details , together with a
+            picture of your ID card
+          </p>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <h3 class="md:text-2xl text-xl font-semibold">
+          STEP 3: OFFICIAL RECEIPT
+        </h3>
+        <div class="font-medium space-y-2">
+          <p class="text-sm md:text-base">
+            Present a valid photocopy of your Knust student ID card to the
+            hostel admin together with your bank pay-in slip on the first day of
+            reporting
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="flex-1">
+      <h3 class="text-xl md:text-2xl font-semibold mb-4">Booking Form</h3>
+      <form
+        action="/bookings/"
+        method="post"
+        class="flex flex-col"
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %}
+        <!--This is the form-->
+        {{ form }}
+        <input
+          type="submit"
+          value="Book room"
+          class="bg-black text-white text-sm p-2 font-medium"
+        />
+      </form>
+    </section>
+  </div>
+  {% endblock %}
+</main>

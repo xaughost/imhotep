@@ -1,0 +1,53 @@
+{% extends "shared/base.html" %}
+
+<!--This it title Block-->
+{% block title %} Imhotep | All rooms {% endblock %}
+
+<main>
+  {% block content %}
+  <header class="relative h-[40vh]">
+    <div class="absolute inset-0 -z-10">
+      <img
+        src="{{ images.first.image.url }}"
+        alt="{{ hostel.name }}"
+        class="w-full h-full object-cover object-center"
+      />
+    </div>
+    <div class="z-30 max-w-[80rem] mx-auto h-full flex items-center">
+      <div class="w-full flex">
+        <div class="bg-black/50 px-4 py-8 space-y-4 text-white">
+          <h1 class="md:text-3xl text-xl font-bold underline">
+            Room Type: {{room.name}}
+          </h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="max-w-[80rem] mx-auto py-24 space-y-16">
+    {% if room.description %}
+    <div>
+      <div class="md:w-3/5 bg-black/5 px-8 py-4 space-y-2">
+        <h2 class="text-xl font-semibold">Room Description</h2>
+        <p class="text-sm md:text-base">{{room.description}}</p>
+      </div>
+    </div>
+    {% endif %}
+    <div
+      class="flex flex-1 items-center flex flex-wrap items-center justify-center gap-16"
+    >
+      {% for image in images %}
+      <div class="relative h-[300px] w-[300px] flex items-end justify-center">
+        <div class="absolute inset-0 -z-10">
+          <img
+            src="{{ image.image.url }}"
+            alt="{{ room.name }}"
+            class="w-full h-full object-cover object-center"
+          />
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endblock %}
+</main>
